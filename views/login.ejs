@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>Document</title>
+</head>
+<style>
+
+
+</style>
+<body> 
+  <div class="container"> 
+    <span class="emoticon"></span>
+    <div class="container-itens"> 
+      <label class="textInputs" style="font-size: 33px; color:#3498db; font-weight: 700"> Iniciar</label> 
+      <form class="formCenter" id='login'> <!-- Agregar el login -->
+        <div class="content-inputs"> 
+          <label class="textInputs" for="username">Usuario</label> 
+          <input  type="text" id="username" name="usuario" required> <!-- Agregar name -->
+          
+          <label class="textInputs" for="password">Contraseña</label> 
+          <input type="password" id="password" name="password" required> <!-- Asegúrate de que el name esté aquí -->
+        </div> 
+        <button class="btn-Login " type="submit">Entrar</button> <!-- Cambiar type a submit -->
+      </form>
+    </div> 
+  </div>   
+
+  <script type="text/javascript">
+    const login = document.getElementById('login');
+
+    login.addEventListener('submit',event=>{
+    event.preventDefault();
+
+     const data = new FormData(login);
+
+
+    const usuario = data.get('usuario');
+    const password = data.get('password');
+   
+
+    fetch('/',{
+        method:'post',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify({usuario,password})
+    })
+    .then(res=>res.json())
+    .then(res=>{
+        if(res.interruptor){
+         alert('Bienvenido');
+         setTimeout(()=>{
+         window.location.href='/home';
+         },2000);
+        }else{
+        alert('credenciales erroneas');
+        }
+    })
+    });
+
+</script>
+</body>
+
+</html>

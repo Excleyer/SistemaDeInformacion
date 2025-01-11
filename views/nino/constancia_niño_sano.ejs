@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/constancia.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="main-header">
+        <h1>Constancia de Niño Sano</h1>
+        <nav>
+            <ul>
+                <li><a method="POST" href="/home">Regresar</a></li>
+                <li><a method="POST" href="/getPacientes">Ver pacientes</a></li>
+                
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form id='formulario'>
+    <div class="container" >
+        <div class="container-form">
+            <div class="content-input">
+                <legend>Datos personales</legend>
+            <label  for="nombre">Nombres: </label>
+            <input type="text" id="nombres" name="nombre" required>
+          
+            <label for="apellido"> Apellidos:</label>
+            <input type="text" id="apellidos" name="apellido" required>
+           
+
+            <label for="edad" class="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required>
+
+            <label for="sexo" class="sex">Sexo:</label>
+            <input type="text" id="sexo" name="sexo" required>
+
+            
+
+            <label for="fecha_nac" class="fecha_nac">Fecha de Nacimiento:</label>
+            <input type="date" id="f_nac" name="fecha_nac" required>
+          
+
+            <label for="lugar_nac">Lugar de Nacimiento:</label>
+            <input type="text" id="lugar_nac" name="lugar_nac" required>
+
+            <label for="direccion" class="dir">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+
+            <label for="evaluacion" class="eva">Se evalúa a:</label>
+            <input type="text" id="evaluacion" name="evaluacion" required>
+        </div>
+    </div>
+        <div class="container-form">
+            <div class="content-input">
+                <label for="piel">Piel y mucosa:</label>
+                <input type="text" id="piel" name="piel" required>
+
+                <label for="peso" class="peso">Peso (kg):</label>
+                <input type="number" id="peso" name="peso" step="0.01" required>
+
+                <label for="talla" class="tall">Talla (cm):</label>
+                <input type="number" id="talla" name="talla" required>
+
+                <label for="temperatura">Temperatura (°C):</label>
+                <input type="number" id="temperatura" name="temperatura" step="0.1" required>
+
+                <label for="cardio" class="cardio">Cardiorrespiratorio:</label>
+                <input type="text" id="cardio" name="cardio" required>
+
+                <label for="abdomen" class="ad">Abdomen:</label>
+                <input type="text" id="abdomen" name="abdomen" required>
+
+                
+                <label for="laboratorio" id="rr">Resultados del Laboratorio:</label>
+                <input type="text" id="laboratorio" name="laboratorio" required>
+                <br>
+
+                <label for="snc">SNC:</label>
+                <input type="text" id="snc" name="snc" required>
+
+                <label for="inmunizaciones" class="inn">Inmunizaciones:</label>
+                <input type="text" id="inmunizaciones" name="inmunizaciones" required>
+
+                <label for="idx" class="idx">IDX:</label>
+                <input type="text" id="idx" name="idx" required>
+                </div>
+                <input type="number" name="representante" placeholder="Ingrese cedula del representante">
+        </div>
+        
+    </div>
+    
+    <div class="container-btn">
+        <button href="/estados/agregar" type="submit" class="btn">Registrar</button>
+    </div>
+</form>
+
+
+<script type="text/javascript">
+    const formulario = document.getElementById('formulario');
+
+    formulario.addEventListener('submit',event=>{
+    event.preventDefault();
+
+     const data = new FormData(formulario);
+
+
+    const nombres = data.get('nombre');
+    const apellidos = data.get('apellido');
+    const edad = data.get('edad');
+    const sexo = data.get('sexo');
+    const fecha_nac = data.get('fecha_nac');
+    const lugar_nac = data.get('lugar_nac');
+    const direccion = data.get('direccion');
+    const evaluacion = data.get('evaluacion');
+    const piel = data.get('piel');
+    const peso = data.get('peso');
+    const talla = data.get('talla');
+    const temperatura = data.get('temperatura');
+    const cardio = data.get('cardio');
+    const abdomen = data.get('abdomen');
+    const laboratorio = data.get('laboratorio');
+    const snc = data.get('snc');
+    const inmunizaciones = data.get('inmunizaciones');
+    const idx = data.get('idx');
+    const representante = data.get('representante');
+
+    fetch('/register',{
+        method:'post',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify({nombres,apellidos,edad,sexo,fecha_nac,lugar_nac,direccion,evaluacion,piel,peso,talla,temperatura,cardio,abdomen,laboratorio,snc,inmunizaciones,idx,representante})
+    })
+    .then(res=>res.json())
+    .then(res=>{
+        if(res.interruptor){
+         alert('Registro completado con exito');
+         setTimeout(()=>{
+         window.location.href='/home';
+         },2000);
+        }else if(res.discrepancia){
+         alert('La cedula del representante es incorrecta');
+        }else{
+         alert('Error de la capa 8 detectado <[+_+]>');
+        }
+    })
+    });
+
+
+   
+
+
+</script>
+</body>
+
+</html>

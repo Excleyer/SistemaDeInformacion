@@ -1,0 +1,16 @@
+1)npm i;
+2)descargar instalar xampp.
+3)crear usuario en xampp.
+4)escribir usuario y password en el dumento de conexion config/database.js.
+5)crear la base de datos q esta en la capeta db/Db.sql.
+6)intalar los mudulos retantes:
+
+npm i sequelize
+npm i express-session
+
+7)npm start.
+
+8) credenciales :admin Javier.
+                 password 29858705.
+
+9)escucha en el puerto http://localhost:3000/

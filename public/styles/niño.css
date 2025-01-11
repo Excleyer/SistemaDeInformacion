@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.img img{
+    width: 10%;
+    
+}
+
+:root {
+    --azul: #84d5fa;
+    --rosado: #fa82ea;
+    --blanco: #ffffff; 
+    --negro: #000000;
+    --gris: #e9e6e6;
+    --grisOscuro: #8d8d8d;
+    --azulOscuro: #3498db
+
+}
+.container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+header {
+    background:  var(--azulOscuro);
+    color: #fff;
+    padding-top: 50px;
+    text-align: center;
+    border-bottom: 3px solid #fa82ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    font-size: 29px;
+    margin-left: 200px;
+}
+.btn:hover{
+    background-color: var(--azulOscuro);
+}
+
+form {
+    background: #fff;
+    padding: 90px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+legend {
+    font-size: 18px;
+    background: #fa82ea;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+label {
+   
+    margin-top: 10px;
+    
+}
+
+input, select{
+   
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #00a6e7;
+}
+
+.btn {
+    background: #ff69b4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 10%;
+    height: 60px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.bt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+}
+
+p{
+    margin-top: 28px;
+    margin-bottom: 34px;
+    text-align: center;
+}
+
+#edad{
+    width: 11%;
+}
+
+#nombre{
+    
+    width: 78%;
+}
+
+.sex, .fecha_nac{
+    margin-left: 70px;
+}
+
+#fecha_nac{
+  width: 24%
+}
+
+#sexo{
+    width: 15%;
+}
+
+#lugar_nac, #direccion{
+    width: 16%;
+}
+
+#evaluacion{
+  width: 20%;
+}
+
+
+.dir, .eva{
+    margin-left: 20px;
+}
+
+.tall, .peso{
+    margin-left: 20px;
+}
+#peso{
+    width: 19%;
+}
+
+#talla{
+    width: 21%;
+}
+
+#temperatura{
+    width: 12%;
+}
+
+.cardio, .ad{
+    margin-left: 8px;
+}
+
+#abdomen{
+    width: 18%;
+
+}
+
+#lab{
+    width: 74% ;
+}
+
+#in, #idx, #snc{
+    width: 20%;
+}
+
+.idx, .inn{
+    margin-left: 7%;
+}
+
+button{
+    font-family: "Poppins", sans-serif;
+}
+
+.seo{
+    font-family: "Poppins", sans-serif;
+}

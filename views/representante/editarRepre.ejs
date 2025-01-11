@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/constancia.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="main-header">
+        <h1>Update Representante</h1>
+        <nav>
+            <ul>
+                <li><a method="POST" href="/Registro">Regresar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form  id='formulario' data-id='<%=r.id%>'>
+        <div class="container" >
+            <div class="container-form">
+                <div class="content-input">
+                    <legend>Datos del Representante</legend>
+
+                    <label for="nombres"> Nombres:</label>
+                    <input type="text" name="nombres" placeholder="Ingrese primer y segundo nombre" value="<%=r.nombres%>">
+
+                    <label for="apellidos" class="apellidos">Apellidos:</label>
+                    <input type="text" name="apellidos" value="<%=r.apellidos%>">
+
+                    <label for="edad" class="edad">Edad:</label>
+                    <input type="number" name="edad" value="<%=r.edad%>">
+
+                    <label for="cedula" class="cedula"> Cédula:</label>
+                    <input type="number" name="cedula" value="<%=r.cedula%>">
+
+                    <label for="lugar_nac">Sexo:</label>
+                    <input type="text" name="sexo" value="<%=r.sexo%>">
+
+                    <label for="direccion" class="direccion">Dirección:</label>
+                    <input type="text" name="direccion" value="<%=r.direccion%>">
+
+                    <label for="telefono" class="telefono">Telefóno:</label>
+                    <input type="tel" id="" name="telefono" value="<%=r.telefono%>">
+
+                    <label for="telefonoEmergencia" class="telefonoEmergencia">Telefóno de Emergencia:</label>
+                    <input type="tel" name="telefonoEmergencia" value="<%=r.telefonoEmergencia%>">
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="container-btn">
+            <button type="submit" class="btn btn-Login ">Update</button>
+        </div>
+    </form>
+    <script type="text/javascript">
+      const formulario = document.getElementById('formulario');
+
+      formulario.addEventListener('submit',event=>{
+        event.preventDefault();
+        const id = formulario.dataset.id;
+        const data = new FormData(formulario);
+        const nombres = data.get('nombres');
+        const apellidos = data.get('apellidos');
+        const edad = data.get('edad');
+        const cedula = data.get('cedula');
+        const sexo = data.get('sexo');
+        const direccion = data.get('direccion');
+        const telefono = data.get('telefono');
+        const telefonoEmergencia = data.get('telefonoEmergencia');
+
+        fetch(`/updateRepresentantePost/${id}`,{
+            method:'post',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify({nombres,apellidos,edad,cedula,sexo,direccion,telefono,telefonoEmergencia})
+        })
+        .then(res=>res.json())
+        .then(res=>{
+            if(res.interruptor){
+                alert('Registro actualizado con exito');
+               setTimeout(()=>{
+                   window.location.href='/representante';
+               },2000);
+           }else{
+               alert('Hubo un error inesperado');
+           }
+       })
+    });
+</script>
+</body>
+
+</html>

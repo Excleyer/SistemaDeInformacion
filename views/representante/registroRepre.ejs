@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/constancia.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="main-header">
+        <h1>Registro de Representante </h1>
+        <nav>
+            <ul>
+                <li><a method="POST" href="/representante">Regresar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form  id='formulario'>
+    <div class="container" >
+        <div class="container-form">
+            <div class="content-input">
+                <legend>Datos del Representante</legend>
+
+                <label for="nombres"> Nombres:</label>
+                <input type="text" name="nombres" required placeholder="Ingrese primer y segundo nombre">
+                
+                <label for="apellidos" class="apellidos">Apellidos:</label>
+                <input type="text" name="apellidos" required>
+                
+                <label for="edad" class="edad">Edad:</label>
+                <input type="number" name="edad" required>
+                
+                <label for="cedula" class="cedula"> Cédula:</label>
+                <input type="number" name="cedula" required>
+                
+                <label for="lugar_nac">Sexo:</label>
+                <input type="text" name="sexo" required>
+
+                <label for="direccion" class="direccion">Dirección:</label>
+                <input type="text" name="direccion" required>
+
+                <label for="telefono" class="telefono">Telefóno:</label>
+                <input type="tel" id="" name="telefono" required>
+
+                <label for="telefonoEmergencia" class="telefonoEmergencia">Telefóno de Emergencia:</label>
+                <input type="tel" name="telefonoEmergencia">
+     
+        </div>
+    </div>
+       
+        
+    </div>
+    
+    <div class="container-btn">
+        <button type="submit" class="btn btn-Login ">Registrar</button>
+    </div>
+</form>
+<script type="text/javascript">
+      const formulario = document.getElementById('formulario');
+
+    formulario.addEventListener('submit',event=>{
+    event.preventDefault();
+
+     const data = new FormData(formulario);
+
+
+    const nombres = data.get('nombres');
+    const apellidos = data.get('apellidos');
+    const edad = data.get('edad');
+    const cedula = data.get('cedula');
+    const sexo = data.get('sexo');
+    const direccion = data.get('direccion');
+    const telefono = data.get('telefono');
+    const telefonoEmergencia = data.get('telefonoEmergencia');
+
+    fetch('/registerRepresentantePost',{
+        method:'post',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify({nombres,apellidos,edad,cedula,sexo,direccion,telefono,telefonoEmergencia})
+    })
+    .then(res=>res.json())
+    .then(res=>{
+        if(res.interruptor){
+         alert('Registro completado con exito');
+         setTimeout(()=>{
+         window.location.href='/register';
+         },2000);
+        }else{
+         alert('Hubo un error inesperado');
+        }
+    })
+    });
+</script>
+</body>
+
+</html>

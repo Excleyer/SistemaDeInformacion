@@ -1,0 +1,58 @@
+/* Resposive para tablets Keidyli*/
+@media (min-width:450px) and (max-width:720px){
+    .container{
+      padding: 15px;
+    }
+  
+    .img img{
+      width: 30%;
+    }
+  
+    label{
+      display: block;
+    }
+  
+    .sex,.fecha_nac,.dir,.eva,.peso,.tall,.cardio,.ad, .inn, .idx{
+      margin-left: 0;
+    }
+  
+    #nombre,#edad, #sexo, #fecha_nac, #lugar_nac, #direccion, #evaluacion, #piel, #peso, #talla, #temperatura, #cardio, #abdomen, #lab, #snc, #in, #idx{
+      width: 70%;
+    }
+  
+    .btn{
+      width: 30%;
+    }
+  
+  }
+  
+  /*Responsive para mobile Keidyli*/
+  @media (min-width:320px) and (max-width:450px){
+      legend{
+          text-align: center;
+      }
+  
+      header h1{
+          font-size: 24px;
+          margin-left: 50px;
+  
+      }
+
+      .img img{
+        width: 30%;
+      }
+    
+
+      .sex,.fecha_nac,.dir,.eva,.peso,.tall,.cardio,.ad, .inn, .idx{
+        margin-left: 0;
+      }
+  
+      #nombre,#edad, #sexo, #fecha_nac, #lugar_nac, #direccion, #evaluacion, #piel, #peso, #talla, #temperatura, #cardio, #abdomen, #lab, #snc, #in, #idx{
+          width: 100%;
+        }
+  
+      .btn{
+         width: 70%
+        }
+      
+  }

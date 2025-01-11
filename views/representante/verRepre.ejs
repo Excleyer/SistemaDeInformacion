@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ver representante</title>
+	<style type="text/css">
+		body,td{
+			color:rgb(0,0,0);
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>nombres</th>
+				<th>apellidos</th>
+				<th>edad</th>
+				<th>cedula</th>
+				<th>sexo</th>
+				<th>direccion</th>
+				<th>telefono</th>
+				<th>telefonoEmergencia</th>
+				<th>opciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% representante.forEach(item=>{ %>
+			<tr>
+				<td class="id" data-id='<%=item.id%>'><%=item.id%></td>
+				<td><%=item.nombres%></td>
+				<td><%=item.apellidos%></td>
+				<td><%=item.edad%></td>
+				<td><%=item.cedula%></td>
+				<td><%=item.sexo%></td>
+				<td><%=item.direccion%></td>
+				<td><%=item.telefono%></td>
+				<td><%=item.telefonoEmergencia%></td>
+				<td>
+					<a href="/updateRepresentante/<%=item.id%>">Actualizar</a>
+				</td>
+			</tr>
+			<% }) %>
+		</tbody>
+	</table>
+<script type="text/javascript">
+	const id = document.querySelectorAll('.id');
+	id.forEach(i =>{
+		let identificador = i.dataset.id;
+		console.log(`identificador : ${identificador}`);
+	})
+</script>
+</body>
+</html>

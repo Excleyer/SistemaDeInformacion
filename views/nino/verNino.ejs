@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+       
+            <link rel="stylesheet" href="./styles/constancia.css">
+            <link rel="stylesheet" href="./styles/ver.css">
+        </head>
+
+        <title>Document</title>
+        <header class="main-header">
+            <h1>Ver Pacientes</h1>
+            <nav>
+                <ul>
+                    <li><a href="/Register">Agregar</a></li>
+                
+                </ul>
+            </nav>
+        </header>
+     
+     
+   
+
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100">
+                <table>
+                    <thead>
+
+                        <tr class="table100-head">
+                            <th>ID</th>
+                            <th class="column">Nombres</th>
+                            <th class="column">Apellidos</th>
+                            <th class="column">Edad</th>
+                            <th class="column">Sexo</th>
+                            <th class="column">Fecha de Nacimiento</th>
+                            <th class="column">Lugar de Nacimiento</th>
+                            <th class="column">Dirección</th>
+                            <th class='column'>snc</th>
+                            <th class="column">ID representante</th>
+                            <th class="column" colspan="2">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                          <% pacientes.forEach(paciente=>{ %>
+                            <tr>
+                              <td><%=paciente.id%></td>
+                              <td><%=paciente.nombres%></td>
+                              <td><%=paciente.apellidos%></td>
+                              <td><%=paciente.edad%></td>
+                              <td><%=paciente.sexo%></td>
+                              <td><%=paciente.fechaNacimiento%></td>
+                              <td><%=paciente.lugarNacimiento%></td>
+                              <td><%=paciente.direccion%></td>
+                              <td><%=paciente.snc%></td>
+                              <td><%=paciente.idRepresentante%></td>
+                              <td>
+                                <a href="/editarNino/<%=paciente.id%>" class="options edit">Editar</a>
+                                <a href="/verPerfil/<%=paciente.id%>" class="options ver">Ver Perfil</a>
+                              </td>
+                              
+                            </tr>
+                           <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
