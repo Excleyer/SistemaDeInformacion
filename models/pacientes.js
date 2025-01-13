@@ -19,7 +19,7 @@ const Pacientes = sequelize.define('pacientes', {
     type: DataTypes.INTEGER, // Cambiado a INTEGER
     allowNull: false
   },
-  sexo: {
+  sexo:{
     type: DataTypes.STRING(10),
     allowNull: false
   },

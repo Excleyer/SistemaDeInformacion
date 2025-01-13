@@ -41,7 +41,7 @@ const loginPost = async(req,res)=>{
 
 	 const USUARIO= 'Javier'
 	 const PASSWORD='29858705'
-		 // Validar credenciales
+		 // Validar credenciales de ponysalvaje07
 		 if (usuario === USUARIO && password === PASSWORD) {
 			req.session.isActive = true;
 			req.session.isActive = usuario;
@@ -204,19 +204,57 @@ const logout =(req,res)=>{
 	}
 }
 ///////////////////////////////////////////////////
-const Filtro = async(req,res)=>{
-	
-	try{
-		const {Buscar}=req.body;
-		const datos = await pacientes.findAll({where:{pacientes:Buscar}}); 
-		res.render('./nino/verNino',{pacientes:datos});
-		res.json({interruptor:true});
-		}catch(error){
-		 console.error(error.message);
-		 res.status(500).send('Error en el servidor');
-		 res.json({interruptor:false});
-		}
-}
+const filtro = async (req, res) => {
+    try {
+        const { buscar } = req.body;
+
+        // Primero, busca en la tabla representantes por cedula
+        const representante = await represent.findOne({
+            where: {
+                cedula: { [Op.like]:`%${buscar}%` }
+            },
+            include: [
+                {
+                    model: pacientes,
+                    as: 'pacientes' // Asegúrate de que este alias coincida con el que definiste en tu modelo
+                }
+            ]
+        });
+
+        if (representante) {
+            // Si se encuentra un representante, devuelve el representante y sus pacientes
+            console.log(`Representante encontrado: ${JSON.stringify(representante)}`);
+            return res.render('./perfil', { datos: representante,tabla:'representantes'});
+        }
+
+        // Si no se encuentra un representante, busca en la tabla pacientes
+        const paciente = await pacientes.findOne({
+            where: {
+                [Op.or]: [
+                    { nombres: { [Op.like]:`%${buscar}%`}},
+                    { apellidos: { [Op.like]: `%${buscar}%`}},
+                    { id: { [Op.like]: `%${buscar}%` } }
+                ]
+            },
+            include: [
+                {
+                    model: represent,
+                    as: 'representante' // Asegúrate de que este alias coincida con el que definiste en tu modelo
+                }
+            ]
+        });
+
+        if (!paciente) {
+            return res.status(404).send('No se encontraron resultados');
+        }
+
+        console.log(`Paciente encontrado: ${JSON.stringify(paciente)}`);
+        res.render('./perfil', { datos: paciente,tabla:'pacientes'});
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Error en el servidor');
+    }
+};
 ///////////////////////////////////////////////////
 //exportar funciones al router.js
 module.exports={
@@ -235,5 +273,5 @@ module.exports={
 	updateRepresentantePost,
 	loginPost,
 	logout,
-	Filtro
+	filtro
 }

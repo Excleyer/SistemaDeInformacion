@@ -4,7 +4,7 @@ const router = express.Router();
 const midelwareVerifyUser = require('../midderware/veryfyAdmin.js')
 
 //importar controlador
-const {index,login,register,registerPost,getPacientes,representanteGet,editarNino,verPerfil,update,registerRepresentanteGet,registerRepresentantePost,updateRepresentante,updateRepresentantePost,loginPost,logout,Filtro} = require('../controllers/controllers.js');
+const {index,login,register,registerPost,getPacientes,representanteGet,editarNino,verPerfil,update,registerRepresentanteGet,registerRepresentantePost,updateRepresentante,updateRepresentantePost,loginPost,logout,filtro} = require('../controllers/controllers.js');
 
 router.get('/',login);//mostrar login
 router.get('/home',midelwareVerifyUser,index);//plantilla de inicio
@@ -22,7 +22,8 @@ router.get('/updateRepresentante/:id',midelwareVerifyUser ,updateRepresentante);
 router.post('/',loginPost);//evalua logueado
 
 
-router.post('/buscarPOST',Filtro)//buscar pacuiente
+router.post('/filtro',filtro)//buscar pacuiente
+
 //metodos post
 router.post('/register',midelwareVerifyUser ,registerPost);//registrar paciente
 router.post('/update/:id',midelwareVerifyUser ,update);//actualizar paciente
