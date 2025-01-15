@@ -1,4 +1,4 @@
-CREATE DATABASE pediatria;
+CREATE DATABASE pediatriaa;
 
 /*CREATE TABLE pacientes (
     id INT AUTO_INCREMENT PRIMARY KEY,

@@ -35,50 +35,6 @@ const Pacientes = sequelize.define('pacientes', {
     type: DataTypes.STRING(100),
     allowNull: false
   },
-  evaluacion: {
-    type: DataTypes.STRING(100),
-    allowNull: false
-  },
-  piel: {
-    type: DataTypes.STRING(100),
-    allowNull: false
-  },
-  peso: {
-    type: DataTypes.DECIMAL(10, 2),
-    allowNull: false
-  },
-  talla: {
-    type: DataTypes.DECIMAL(10, 2),
-    allowNull: false
-  },
-  temperatura: {
-    type: DataTypes.DECIMAL(10, 2),
-    allowNull: false
-  },
-  cardio: {
-    type: DataTypes.STRING(100),
-    allowNull: false
-  },
-  abdomen: {
-    type: DataTypes.STRING(100),
-    allowNull: false
-  },
-  laboratorio: {
-    type: DataTypes.STRING(100),
-    allowNull: false
-  },
-  snc: {
-    type: DataTypes.STRING(100),
-    allowNull: false
-  },
-  inmunizaciones: {
-    type: DataTypes.STRING(100),
-    allowNull: false
-  },
-  idx: {
-    type: DataTypes.STRING(100),
-    allowNull: false
-  },
   idRepresentante: {
     type: DataTypes.INTEGER.UNSIGNED,
     allowNull: false,

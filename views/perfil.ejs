@@ -7,13 +7,20 @@
     <link rel="stylesheet" href="/styles/perfil.css">
 </head>
 <body>
-    <h1>Perfil del Paciente</h1> 
     
     <% if(tabla == 'pacientes'){ %>
+        
+    <h1>Perfil del Paciente</h1> 
+    
     <div class="perfil-container">
+   
+        
+
         <div class="avatar-container">
             <img class="profile-avatar" src="https://img.freepik.com/premium-vector/cartoon-image-boy-with-blue-shirt-yellow-background_1173110-2206.jpg" alt="Avatar">
-        </div>
+        
+            
+    </div>
         
 
         <h2>Datos Personales</h2>
@@ -25,17 +32,6 @@
         <p><strong>Fecha de Nacimiento: <%=datos.fechaNacimiento%></strong></p>
         <p><strong>Lugar de Nacimiento:<%=datos.lugarNacimiento%></strong></p>
         <p><strong>Dirección: <%=datos.direccion%></strong></p>
-        <p><strong>Evaluación: <%=datos.evaluacion%></strong></p>
-        <p><strong>Piel: <%=datos.piel%></strong></p>
-        <p><strong>Peso: <%=datos.peso%></strong></p>
-        <p><strong>Talla: <%=datos.talla%></strong></p>
-        <p><strong>Temperatura:<%=datos.temperatura%></strong></p>
-        <p><strong>Cardio: <%=datos.cardio%></strong></p>
-        <p><strong>Abdomen: <%=datos.abdome%></strong></p>
-        <p><strong>Laboratorio: <%=datos.laboratorio%></strong></p>
-        <p><strong>SNC: <%=datos.snc%></strong></p>
-        <p><strong>Inmunizaciones: <%=datos.inmunizaciones%></strong></p>
-        <p><strong>IDX: <%=datos.idx%></strong></p>
         
     </div>
 
@@ -51,16 +47,54 @@
         
     </div>
 
+    
+    <div class="limiter">
+    <div class="perfil-container">
+        <h2>Datos del Representante</h2>
+        <div class="wrap-table100">
+            <div class="table100">
+                <table>
+                    <thead>
 
+                        <tr class="table100-head">
+                            <th class="column">Evaluacion</th>
+                            <th class="column">Peso</th>
+                            <th class="column">Fecha y Lugar</th>
+                            <th class="column" colspan="2">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% datos.consultas.forEach(registro=>{ %>
+                            <tr>
+                                
+                                <td><%=registro.evaluacion%>Kg</td>
+                                <td><%=registro.peso%></td>
+                                <td><%=registro.createdAt%></td>
+                               
+                                <td>
+                                  <a href="/editconsulta/<%=registro.id%>" class="options edit">Editar</a>
+                    
+                                </td>
+                                
+                              </tr>
 
-    <% } %>
+                              <% })  %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+
+  
 
 
    <div class="father-container">
      <div class="child-container">
         <a href="/home">Volver a principal</a>
+        <a href="/addconsulta/<%=datos.id%>">registrar consuslta</a>
      </div>
     </div>
-
+  <% } %>
 </body>
 </html>

@@ -4,7 +4,7 @@ const router = express.Router();
 const midelwareVerifyUser = require('../midderware/veryfyAdmin.js')
 
 //importar controlador
-const {index,login,register,registerPost,getPacientes,representanteGet,editarNino,verPerfil,update,registerRepresentanteGet,registerRepresentantePost,updateRepresentante,updateRepresentantePost,loginPost,logout,filtro} = require('../controllers/controllers.js');
+const {index,login,register,registerPost,getPacientes,representanteGet,editarNino,verPerfil,update,registerRepresentanteGet,registerRepresentantePost,updateRepresentante,updateRepresentantePost,loginPost,logout,filtro,addconsulta,addconsultasPOST,editconsultaget,editconsultapos} = require('../controllers/controllers.js');
 
 router.get('/',login);//mostrar login
 router.get('/home',midelwareVerifyUser,index);//plantilla de inicio
@@ -20,6 +20,12 @@ router.get('/representante',midelwareVerifyUser ,representanteGet);//listar repr
 router.get('/registerRepresentanteGet',midelwareVerifyUser ,registerRepresentanteGet);//mostrar plantilla de registro de representantes
 router.get('/updateRepresentante/:id',midelwareVerifyUser ,updateRepresentante);//mostrar plantilla de actualizar representantes
 
+//consulta regitrar
+router.get('/addconsulta/:id',midelwareVerifyUser,addconsulta)
+
+
+//solisitud de editar
+router.get('/editconsulta/:id',editconsultaget)
 //login pos
 router.post('/',loginPost);//evalua logueado
 
@@ -32,6 +38,7 @@ router.post('/update/:id',midelwareVerifyUser ,update);//actualizar paciente
 //registerRepresentante
 router.post('/registerRepresentantePost',midelwareVerifyUser ,registerRepresentantePost);//registrar representante
 router.post('/updateRepresentantePost/:id',midelwareVerifyUser,updateRepresentantePost)//actualizar representante
-
-
+//consulta regitrar
+router.post('/addconsultasPOST',midelwareVerifyUser,addconsultasPOST)
+router.post('/editconsultapos',midelwareVerifyUser,editconsultapos)
 module.exports=router;

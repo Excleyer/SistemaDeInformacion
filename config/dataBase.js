@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('pediatria',
+const sequelize = new Sequelize('pediatriaa',
   'Javier',
   'Javi20/**', 
   {

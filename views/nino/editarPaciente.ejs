@@ -45,44 +45,9 @@
             <label for="direccion" class="dir">Dirección:</label>
             <input type="text" id="direccion" name="direccion" value='<%=data.direccion%>'>
 
-            <label for="evaluacion" class="eva">Se evalúa a:</label>
-            <input type="text" id="evaluacion" name="evaluacion" value='<%=data.evaluacion%>'>
         </div>
     </div>
-        <div class="container-form">
-            <div class="content-input">
-                <label for="piel">Piel y mucosa:</label>
-                <input type="text" id="piel" name="piel" value='<%=data.piel%>'>
-
-                <label for="peso" class="peso">Peso (kg):</label>
-                <input type="number" id="peso" name="peso" step="0.01" value='<%=data.peso%>'>
-
-                <label for="talla" class="tall">Talla (cm):</label>
-                <input type="number" id="talla" name="talla" value='<%=data.talla%>'>
-
-                <label for="temperatura">Temperatura (°C):</label>
-                <input type="number" id="temperatura" name="temperatura" step="0.1" value='<%=data.temperatura%>'>
-
-                <label for="cardio" class="cardio">Cardiorrespiratorio:</label>
-                <input type="text" id="cardio" name="cardio" value='<%=data.cardio%>'>
-
-                <label for="abdomen" class="ad">Abdomen:</label>
-                <input type="text" id="abdomen" name="abdomen" value='<%=data.abdomen%>'>
-
-                
-                <label for="laboratorio" id="rr">Resultados del Laboratorio:</label>
-                <input type="text" id="laboratorio" name="laboratorio" value='<%=data.laboratorio%>'>
-                <br>
-                <label for="snc">SNC:</label>
-                <input type="text" id="snc" name="snc" value='<%=data.snc%>'>
-
-                <label for="inmunizaciones" class="inn">Inmunizaciones:</label>
-                <input type="text" id="inmunizaciones" name="inmunizaciones" value='<%=data.inmunizaciones%>'>
-
-                <label for="idx" class="idx">IDX:</label>
-                <input type="text" id="idx" name="idx" value='<%=data.idx%>'>
-                </div>
-        </div>
+       
         
     </div>
     
@@ -104,17 +69,6 @@
         const fecha_nac = data.get('fecha_nac');
         const lugar_nac = data.get('lugar_nac');
         const direccion = data.get('direccion');
-        const evaluacion = data.get('evaluacion');
-        const piel = data.get('piel');
-        const peso = data.get('peso');
-        const talla = data.get('talla');
-        const temperatura = data.get('temperatura');
-        const cardio = data.get('cardio');
-        const abdomen = data.get('abdomen');
-        const laboratorio = data.get('laboratorio');
-        const snc = data.get('snc');
-        const inmunizaciones = data.get('inmunizaciones');
-        const idx = data.get('idx');
 
         const id = formulario.dataset.id;
         fetch(`/update/${id}`,{
@@ -122,7 +76,7 @@
             headers:{
                 "Content-Type":"application/json"
             },
-            body:JSON.stringify({nombres,apellidos,edad,sexo,fecha_nac,lugar_nac,direccion,evaluacion,piel,peso,talla,temperatura,cardio,abdomen,laboratorio,snc,inmunizaciones,idx,id})
+            body:JSON.stringify({nombres,apellidos,edad,sexo,fecha_nac,lugar_nac,direccion,id})
         })
         .then(res=>res.json())
         .then(res=>{
