@@ -14,3 +14,60 @@ npm i express-session
                  password 29858705.
 
 9)escucha en el puerto http://localhost:3000/
+
+
+
+
+else{
+
+
+
+        <div class="perfil-container">
+            <div class="avatar-container">
+                <img class="profile-avatar" src="https://img.freepik.com/premium-vector/cartoon-image-boy-with-blue-shirt-yellow-background_1173110-2206.jpg" alt="Avatar">
+            </div>
+            
+    
+            <h2>Datos Personales</h2>
+            <% datos.pacientes.forEach(registro=>{ %>
+                <br>
+            <p><strong>Nombres: <%=registro.nombres%></strong></p>
+            <p><strong>Apellidos: <%=registro.apellidos%></strong></p>
+            <p><strong>Edad : <%=registro.edad%></strong></p>
+            <p><strong>Sexo: <%=registro.sexo%></strong></p>
+            <p><strong>Fecha de Nacimiento: <%=registro.fechaNacimiento%></strong></p>
+            <p><strong>Lugar de Nacimiento:<%=registro.lugarNacimiento%></strong></p>
+            <p><strong>Dirección: <%=registro.direccion%></strong></p>
+            <p><strong>Evaluación: <%=registro.evaluacion%></strong></p>
+            <p><strong>Piel: <%=registro.piel%></strong></p>
+            <p><strong>Peso: <%=registro.peso%></strong></p>
+            <p><strong>Talla: <%=registro.talla%></strong></p>
+            <p><strong>Temperatura:<%=registro.temperatura%></strong></p>
+            <p><strong>Cardio: <%=registro.cardio%></strong></p>
+            <p><strong>Abdomen: <%=registro.abdome%></strong></p>
+            <p><strong>Laboratorio: <%=registro.laboratorio%></strong></p>
+            <p><strong>SNC: <%=registro.snc%></strong></p>
+            <p><strong>Inmunizaciones: <%=registro.inmunizaciones%></strong></p>
+            <p><strong>IDX: <%=registro.idx%></strong></p>
+    
+         
+                <% })  %>
+            
+        </div>
+        
+        <div class="perfil-container" id="espacio">
+            <h2>Datos del Representante</h2>
+            <p><strong>Nombre y Apellido: <%=datos.nombres%> <%=datos.apellidos%></strong></p>
+            <p><strong>Edad: <%=datos.edad%></strong></p>
+            <p><strong>Cédula: <%=datos.cedula%></strong></p>
+            <p><strong>Sexo: <%=datos.sexo%></strong></p>
+            <p><strong>Dirección: <%=datos.direccion%></strong></p>
+            <p><strong>Telefono: <%=datos.telefono%></strong></p>
+            <p><strong>Telefono2: <%=datos.telefonoEmergencia%></strong></p>
+            
+        </div>
+
+
+ 
+         <% } %>
+

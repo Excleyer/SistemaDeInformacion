@@ -4,66 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil del Paciente</title>
-    <link rel="stylesheet" href="perfil.css">
+    <link rel="stylesheet" href="/styles/perfil.css">
 </head>
 <body>
-    <h1>Perfil del Paciente</h1>
+    <h1>Perfil del Paciente</h1> 
+    
+    <% if(tabla == 'pacientes'){ %>
     <div class="perfil-container">
         <div class="avatar-container">
             <img class="profile-avatar" src="https://img.freepik.com/premium-vector/cartoon-image-boy-with-blue-shirt-yellow-background_1173110-2206.jpg" alt="Avatar">
         </div>
         
+
         <h2>Datos Personales</h2>
-        <ul>
-        <% if(tabla == 'pacientes'){ %>
-
-        <h2>Paciente</h2>
-        <li><%=datos.nombres%></li>
-        <li><%=datos.apellidos%></li>
-        <li><%=datos.id%></li>
-
-        <h2>Representante</h2>
-
-        <li><%=datos.representante.nombres%></li>
-        <li><%=datos.representante.apellidos%></li>
-        <li><%=datos.representante.id%></li>
-
-        <% }else{ %>
-
-       <h2>Representante</h2>
-
-       <li><%=datos.nombres%></li>
-       <li><%=datos.apellidos%></li>
-       <li><%=datos.id%></li>
-
-       <h2>Pacientes</h2>
-
-       <% datos.pacientes.forEach(registro=>{ %>
-       <br>
-       <li><%=registro.nombres%></li>
-       <li><%=registro.apellidos%></li>
-       <li><%=registro.id%></li>
-
-       <% })  %>
-
-        <% } %>
-        </ul>
+        
+        <p><strong>Nombres: <%=datos.nombres%></strong></p>
+        <p><strong>Apellidos: <%=datos.apellidos%></strong></p>
+        <p><strong>Edad : <%=datos.edad%></strong></p>
+        <p><strong>Sexo: <%=datos.sexo%></strong></p>
+        <p><strong>Fecha de Nacimiento: <%=datos.fechaNacimiento%></strong></p>
+        <p><strong>Lugar de Nacimiento:<%=datos.lugarNacimiento%></strong></p>
+        <p><strong>Dirección: <%=datos.direccion%></strong></p>
+        <p><strong>Evaluación: <%=datos.evaluacion%></strong></p>
+        <p><strong>Piel: <%=datos.piel%></strong></p>
+        <p><strong>Peso: <%=datos.peso%></strong></p>
+        <p><strong>Talla: <%=datos.talla%></strong></p>
+        <p><strong>Temperatura:<%=datos.temperatura%></strong></p>
+        <p><strong>Cardio: <%=datos.cardio%></strong></p>
+        <p><strong>Abdomen: <%=datos.abdome%></strong></p>
+        <p><strong>Laboratorio: <%=datos.laboratorio%></strong></p>
+        <p><strong>SNC: <%=datos.snc%></strong></p>
+        <p><strong>Inmunizaciones: <%=datos.inmunizaciones%></strong></p>
+        <p><strong>IDX: <%=datos.idx%></strong></p>
+        
     </div>
-    
+
     <div class="perfil-container" id="espacio">
         <h2>Datos del Representante</h2>
-        <p><strong>Nombre y Apellido: Lorena Garcia</strong></p>
-        <p><strong>Edad: 37 años</strong></p>
-        <p><strong>Cédula: 16948552</strong></p>
-        <p><strong>Sexo: Femenina</strong></p>
-        <p><strong>Teléfono: +58 4125579633</strong></p>
-        <p><strong>Dirección: Avenida Bolivar Norte, Urb. Bello Monte</strong></p>
-
+        <p><strong>Nombre y Apellido: <%=datos.representante.nombres%> <%=datos.representante.apellidos%></strong></p>
+        <p><strong>Edad: <%=datos.representante.edad%></strong></p>
+        <p><strong>Cédula: <%=datos.representante.cedula%></strong></p>
+        <p><strong>Sexo: <%=datos.representante.sexo%></strong></p>
+        <p><strong>Dirección: <%=datos.representante.direccion%></strong></p>
+        <p><strong>Telefono: <%=datos.representante.telefono%></strong></p>
+        <p><strong>Telefono2: <%=datos.representante.telefonoEmergencia%></strong></p>
+        
     </div>
+
+
+
+    <% } %>
+
 
    <div class="father-container">
      <div class="child-container">
-        <a href="">Volver a principal</a>
+        <a href="/home">Volver a principal</a>
      </div>
     </div>
 

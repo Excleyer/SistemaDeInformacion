@@ -113,13 +113,29 @@ try{
 /////////////////////////////////////////////////
 const verPerfil = async (req,res)=>{
 try{
-const id = req.params.id;
-const data = await pacientes.findOne({where:{id}});
-res.render('./nino/perfil',{data});
-}catch(error){
- console.error(error.message);
- res.status(500).send('Error en el servidor');
-}
+const id = req.params.id; 
+
+const paciente = await pacientes.findOne({
+	where: {
+		[Op.or]: [
+			{ id: { [Op.like]:`%${id}%`}},
+			
+		]
+	},
+	include: [
+		{
+			model: represent,
+			as: 'representante' // Asegúrate de que este alias coincida con el que definiste en tu modelo
+		}
+	]
+});
+	console.log(`Paciente encontrado: ${JSON.stringify(paciente)}`);
+	res.render('./perfil', { datos: paciente,tabla:'pacientes'});
+	} catch (error) {
+		console.error(error.message);
+		res.status(500).send('Error en el servidor');
+	}
+
 }
 ////////////////////////////////////////////////
 const representanteGet = async(req,res)=>{
@@ -224,7 +240,7 @@ const filtro = async (req, res) => {
         if (representante) {
             // Si se encuentra un representante, devuelve el representante y sus pacientes
             console.log(`Representante encontrado: ${JSON.stringify(representante)}`);
-            return res.render('./perfil', { datos: representante,tabla:'representantes'});
+            return res.render('./nino/verNinoFiltrado', { datos: representante,tabla:'representantes'});
         }
 
         // Si no se encuentra un representante, busca en la tabla pacientes
@@ -233,7 +249,7 @@ const filtro = async (req, res) => {
                 [Op.or]: [
                     { nombres: { [Op.like]:`%${buscar}%`}},
                     { apellidos: { [Op.like]: `%${buscar}%`}},
-                    { id: { [Op.like]: `%${buscar}%` } }
+                    
                 ]
             },
             include: [
@@ -249,7 +265,7 @@ const filtro = async (req, res) => {
         }
 
         console.log(`Paciente encontrado: ${JSON.stringify(paciente)}`);
-        res.render('./perfil', { datos: paciente,tabla:'pacientes'});
+        res.render('./nino/verNinoFiltrado', { datos: paciente,tabla:'pacientes'});
     } catch (error) {
         console.error(error.message);
         res.status(500).send('Error en el servidor');

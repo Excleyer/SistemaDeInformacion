@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+       
+            <link rel="stylesheet" href="./styles/constancia.css">
+            <link rel="stylesheet" href="./styles/ver.css">
+        </head>
+
+        <title>Document</title>
+        <header class="main-header">
+            <h1>Ver Pacientes</h1>
+            <nav>
+                <ul>
+                    <li><a href="/home">Agregar</a></li>
+                
+                </ul>
+            </nav>
+        </header>
+     
+     
+   
+
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100">
+                <table>
+                    <thead>
+
+                        <tr class="table100-head">
+                            <th>ID</th>
+                            <th class="column">Nombres</th>
+                            <th class="column">Apellidos</th>
+                            <th class="column">Edad</th>
+                            <th class="column">Sexo</th>
+                            <th class="column" colspan="2">Opciones</th>
+                        </tr>
+                    </thead>
+                   
+                    <tbody>
+                           <% if(tabla == 'pacientes'){ %>
+                            <tr>
+                              <td><%=datos.id%></td>
+                              <td><%=datos.nombres%></td>
+                              <td><%=datos.apellidos%></td>
+                              <td><%=datos.edad%></td>
+                              <td><%=datos.sexo%></td>
+            
+                              <td>
+                                <a href="/editarNino/<%=datos.id%>" class="options edit">Editar</a>
+                                <a href="/verPerfil/<%=datos.id%>" class="options ver">Ver Perfil</a>
+                              </td>
+                              
+                            </tr>
+                            <% }else{ %>
+                                <% datos.pacientes.forEach(registro=>{ %>
+                                <tr>
+                                    <td><%=registro.id%></td>
+                                    <td><%=registro.nombres%></td>
+                                    <td><%=registro.apellidos%></td>
+                                    <td><%=registro.edad%></td>
+                                    <td><%=registro.sexo%></td>
+                                    <td>
+                                      <a href="/editarNino/<%=registro.id%>" class="options edit">Editar</a>
+                                      <a href="/verPerfil/<%=registro.id%>" class="options ver">Ver Perfil</a>
+                                    </td>
+                                    
+                                  </tr>
+
+                                  <% })  %>
+
+                                <% }%>
+                                      
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

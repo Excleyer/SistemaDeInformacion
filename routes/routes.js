@@ -13,7 +13,9 @@ router.get('/getPacientes',midelwareVerifyUser ,getPacientes);//listar pacientes
 router.get('/cerrarSession',logout);
 
 router.get('/editarNino/:id',midelwareVerifyUser ,editarNino);//editar paciente
+
 router.get('/verPerfil/:id',midelwareVerifyUser ,verPerfil);//ver plantilla perfil
+
 router.get('/representante',midelwareVerifyUser ,representanteGet);//listar representantes
 router.get('/registerRepresentanteGet',midelwareVerifyUser ,registerRepresentanteGet);//mostrar plantilla de registro de representantes
 router.get('/updateRepresentante/:id',midelwareVerifyUser ,updateRepresentante);//mostrar plantilla de actualizar representantes
@@ -22,7 +24,7 @@ router.get('/updateRepresentante/:id',midelwareVerifyUser ,updateRepresentante);
 router.post('/',loginPost);//evalua logueado
 
 
-router.post('/filtro',filtro)//buscar pacuiente
+router.post('/filtro',midelwareVerifyUser,filtro)//buscar pacuiente
 
 //metodos post
 router.post('/register',midelwareVerifyUser ,registerPost);//registrar paciente
