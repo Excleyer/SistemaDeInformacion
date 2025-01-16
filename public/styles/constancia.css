@@ -24,7 +24,7 @@ body{
     justify-content: center;
     align-items: center;
     width: 700px;
-    height: 930px;
+    height: 100%;
     background-color: var(--blanco);
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -47,11 +47,9 @@ body{
     border: none;
     cursor: pointer;
     font-size: 20px;
-
     height: 60px;
     padding: 10px;
     margin: 5px 0;
-   
     border-radius: 5px;
     box-sizing: border-box;
     
@@ -143,8 +141,10 @@ label{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    padding-top: 60px;
+    padding-bottom: 45px;
 }
+
 .options {
     padding: 6px;
     border-radius: 5px;
@@ -165,4 +165,8 @@ label{
 
 .ver {
     background-color: rgb(92, 89, 245);
+}
+
+nav{
+    font-family: Helvetica, sans-serif;
 }

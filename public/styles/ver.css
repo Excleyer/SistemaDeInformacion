@@ -1,16 +1,8 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
-
-@font-face {
-    font-family: OpenSans-Regular;
-    src: url('../fonts/OpenSans/OpenSans-Regular.ttf'); 
-  }
-  
-  
-  
   /*//////////////////////////////////////////////////////////////////
   [ RESTYLE TAG ]*/
   * {
@@ -18,8 +10,11 @@
       padding: 0px; 
       box-sizing: border-box;
   }
-  
 
+  nav{
+    font-family: "Poppins", sans-serif;
+  }
+  
   .column{
   text-align: center;
   }
@@ -82,6 +77,9 @@
       border: none !important;
   }
   
+  h1{
+    font-family: "Poppins", sans-serif;
+  }
   
   
   
@@ -159,7 +157,7 @@
   
   
   .table100-head th{
-    font-family: OpenSans-Regular;
+    font-family: "Poppins", sans-serif;
     font-size: 18px;
     color: #fff;
     line-height: 1.2;
@@ -171,7 +169,7 @@
   }
   
   tbody tr {
-    font-family: OpenSans-Regular;
+    font-family: "Poppins", sans-serif;
     font-size: 15px;
     color: #808080;
     line-height: 1.2;

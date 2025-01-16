@@ -66,6 +66,10 @@ h1 {
     color: #333;
 }
 
+.limiter{
+    padding-bottom: 30px;
+}
+
 /* Botón de regreso */
 .child-container a {
     display: inline-block;
