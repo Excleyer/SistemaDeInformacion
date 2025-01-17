@@ -1,58 +1,153 @@
 /* Resposive para tablets Keidyli*/
-@media (min-width:450px) and (max-width:720px){
-    .container{
-      padding: 15px;
-    }
-  
-    .img img{
-      width: 30%;
-    }
-  
-    label{
-      display: block;
-    }
-  
-    .sex,.fecha_nac,.dir,.eva,.peso,.tall,.cardio,.ad, .inn, .idx{
-      margin-left: 0;
-    }
-  
-    #nombre,#edad, #sexo, #fecha_nac, #lugar_nac, #direccion, #evaluacion, #piel, #peso, #talla, #temperatura, #cardio, #abdomen, #lab, #snc, #in, #idx{
-      width: 70%;
-    }
-  
-    .btn{
-      width: 30%;
-    }
-  
-  }
-  
-  /*Responsive para mobile Keidyli*/
-  @media (min-width:320px) and (max-width:450px){
-      legend{
-          text-align: center;
-      }
-  
-      header h1{
-          font-size: 24px;
-          margin-left: 50px;
-  
-      }
+@media (min-width:320px) and (max-width:450px) {
 
-      .img img{
-        width: 30%;
-      }
-    
+  .container {
 
-      .sex,.fecha_nac,.dir,.eva,.peso,.tall,.cardio,.ad, .inn, .idx{
-        margin-left: 0;
-      }
-  
-      #nombre,#edad, #sexo, #fecha_nac, #lugar_nac, #direccion, #evaluacion, #piel, #peso, #talla, #temperatura, #cardio, #abdomen, #lab, #snc, #in, #idx{
-          width: 100%;
-        }
-  
-      .btn{
-         width: 70%
-        }
-      
+    width: 320px;
+    right: inherit;
+    top: auto;
+    height: 562px;
+
   }
+
+  .container-itens {
+    gap: 30px;
+    width: 300px;
+    height: 350px;
+
+  }
+
+  .container-form {
+
+    width: 600px;
+
+  }
+
+  .emoticon {
+
+    margin-bottom: 330px;
+
+  }
+}
+
+@media (min-width:450px) and (max-width:720px) {
+  .container {
+    right: inherit;
+    top: inherit;
+  }
+  .container-form {
+
+    width: 600px;
+   
+}
+
+}
+
+@media (min-width:720px) and (max-width:950px) {
+  .container {
+    right: inherit;
+    top: inherit;
+    flex-direction: column;
+
+  }
+
+  .containerP {
+    right: inherit;
+    top: inherit;
+    height: none;
+
+  }
+
+  .container-form {
+
+    width: 500px;
+    height: 820px;
+    gap: 6px;
+    margin-top: 3rem;
+  }
+
+  .content-input {
+    display: flex;
+    width: 360px;
+    gap: 10px;
+    flex-direction: column;
+    border-radius: 20px;
+  }
+
+  .content-input input {
+    height: 30px;
+    width: 360px;
+    border-radius: 3px;
+    border: none;
+    border-bottom: 1px solid var(--rosado);
+  }
+}
+
+@media (min-width:950px) and (max-width:1080px) {
+  .container-form {
+
+    width: 400px;
+    height: 860px;
+
+
+  }
+
+  .containerP {
+
+    flex-direction: column;
+
+  }
+
+  legend {
+    font-size: 20px;
+    justify-content: center;
+    background: #7FE1FE;
+    text-align: center;
+    align-items: center;
+    color: var(--blanco);
+    font-family: Helvetica, sans-serif;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 200px;
+    display: flex;
+    height: 40px;
+    margin-bottom: none;
+  }
+
+  .content-input {
+    display: flex;
+    width: 360px;
+    gap: 10px;
+    flex-direction: column;
+    border-radius: 20px;
+  }
+
+  .content-input input {
+    height: 30px;
+    width: 360px;
+    border-radius: 3px;
+    border: none;
+    border-bottom: 1px solid var(--rosado);
+  }
+}
+
+@media (min-width:1080px) {
+ 
+
+  .container-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 930px;
+    background-color: var(--blanco);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 6px;
+    margin-top: 3rem;
+  }
+}
+
+
+/*Responsive para mobile Keidyli*/

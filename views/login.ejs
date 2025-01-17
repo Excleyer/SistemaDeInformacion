@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/display.css">
     <title>Document</title>
 </head>
 <style>
@@ -11,19 +12,30 @@
 
 </style>
 <body> 
+ 
+  <div class="background"> 
+   
+    <img class="svg"	  src="/img/svg/nino.png" alt="Descripción del SVG">
+  </div>
   <div class="container"> 
-    <span class="emoticon"></span>
-    <div class="container-itens"> 
-      <label class="textInputs" style="font-size: 33px; color:#3498db; font-weight: 700"> Iniciar</label> 
+ <div class="container-itens"> 
+  <img class="svg1"	  src="/img/svg/nino.png" alt="Descripción del SVG">
+
+      <label class="textInputs" style="font-size: 33px; text-align: center;color:#124b51; font-weight: 700; font-family: Helvetica, sans-serif; padding-left: none;"> Gestión y Administración de Pacientes</label> 
       <form class="formCenter" id='login'> <!-- Agregar el login -->
         <div class="content-inputs"> 
-          <label class="textInputs" for="username">Usuario</label> 
-          <input  type="text" id="username" name="usuario" required> <!-- Agregar name -->
-          
-          <label class="textInputs" for="password">Contraseña</label> 
-          <input type="password" id="password" name="password" required> <!-- Asegúrate de que el name esté aquí -->
+          <div class="form__group field">
+            <input type="text" class="form__field" placeholder="Name" name="usuario" id='username' required />
+            <label for="name" class="form__label">Usuario</label>
+          </div>
+          <div class="form__group field">
+            <input type="input" class="form__field" placeholder="Name" name="password" id='password' required />
+            <label for="name" class="form__label">Contraseña</label>
+          </div> <!-- Asegúrate de que el name esté aquí -->
         </div> 
+        <div class="container-btn">
         <button class="btn-Login " type="submit">Entrar</button> <!-- Cambiar type a submit -->
+      </div>
       </form>
     </div> 
   </div>   

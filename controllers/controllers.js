@@ -49,8 +49,8 @@ const loginPost = async(req,res)=>{
 	try{
      const {usuario,password} = req.body;
 
-	 const USUARIO= 'Javier'
-	 const PASSWORD='29858705'
+	 const USUARIO= 'admin'
+	 const PASSWORD='admin'
 		 // Validar credenciales de ponysalvaje07
 		 if (usuario === USUARIO && password === PASSWORD) {
 			req.session.isActive = true;
