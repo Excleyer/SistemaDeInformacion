@@ -145,6 +145,8 @@ z-index: 2;
 
 }
 .content-seach{
+  display: flex;
+  justify-content: center;
   width: 300px;
   height: 300px;
   border-radius: 6px;
@@ -158,7 +160,7 @@ z-index: 2;
 
 .search-container {
   background: #fff;
-  height: 30px;
+  height: 40px;
   border-radius: 30px;
   padding: 10px 20px;
   display: flex;
@@ -177,7 +179,7 @@ z-index: 2;
 }
 
 .search-container:hover > .search-input {
-  width: 400px;
+  width: 150px;
 }
 
 .search-container .search-input {
@@ -193,7 +195,11 @@ z-index: 2;
 .search-container .search-btn .fas {
   color: #5cbdbb;
 }
-
+.search-btn {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+}
 @keyframes hoverShake {
   0% {
     transform: skew(0deg, 0deg);
