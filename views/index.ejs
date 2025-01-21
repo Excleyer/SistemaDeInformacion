@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <link rel="stylesheet" href="/styles/index.css">
-<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <!-- Google fonts-->
 </head>
 <body>
@@ -32,7 +35,26 @@
 
 </div>
 <div class="content-center" >
-<div class="content-pacient"></div>
+<div class="content-pacient">
+
+  <a  href="/getPacientes"><button  href="/getPacientes" class="ver">  Ver </button></a>
+ 
+<h2 class="text-nino">Número de Niños Atendidos:</h2>
+<div class="circle">
+
+  <h2 class="text-center">20%</h2>
+</div>
+<div class='progress_graph'>
+  <div class='progress_graph__bar--1'></div>
+  <div class='progress_graph__bar--2'></div>
+  <div class='progress_graph__bar--3'></div>
+  <div class='progress_graph__bar--4'></div>
+</div>
+
+
+</div>
+<div class="seach">
+  <h2 class="text-center">Buscar Pacientes</h2>
 <div class="content-seach">
 
  <form id='formulario' action='/filtro' method='POST'>
@@ -40,11 +62,11 @@
  <div class="search-container">
   <input type="text"  name="buscar" placeholder="Search..." class="search-input inputSearch">
 
-  <button class="searchP search-btn  fas fa-search" type="submit"></button>
+  <button class="searchP search-btn " type="submit"></button>
 </div>
 </form>
 
-
+</div>
 </div>
 </div>
 <!-- Masthead-->
