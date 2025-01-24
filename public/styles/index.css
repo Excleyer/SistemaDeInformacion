@@ -8,6 +8,7 @@ margin: 0;
 body::before {
   content: '';
   position: absolute;
+  top: 0;
 filter: blur(5px);
   background-color: rgba(255, 255, 255, 0.5); /* Color de fondo con opacidad */
   filter: blur(5px); /* Aplica el filtro deseado */
@@ -64,7 +65,7 @@ z-index: 2;
   list-style-type: none;
   width: 70px;
   height: 50px;
-  gap: 2px;
+  gap: 5px;
   text-decoration: none;
   font-family: 'Roboto Condensed';
   font-size: 16px;
@@ -126,14 +127,21 @@ z-index: 2;
   height: 100vp;
   display: flex;
   flex-direction: column;
+  align-items: center;
  
 
 }
 .content-center{
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  gap: 150px;
+  display: flex
+  ;
+      justify-content: center;
+      flex-direction: row;
+      gap: 150px;
+      background: var(--cafe);
+      width: 900px;
+      height: 400px;
+      align-items: center;
+      border-radius: 8px;
 }
 .content-pacient{
   width: 300px;
