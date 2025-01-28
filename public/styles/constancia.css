@@ -46,15 +46,18 @@ body{
     color: var(--blanco);
     border: none;
     cursor: pointer;
-    font-size: 20px;
-    height: 60px;
+    font-size: 18px;
+    height: 40px;
     padding: 10px;
     margin: 5px 0;
     border-radius: 5px;
     box-sizing: border-box;
     
 }.btn:hover {
-    background-color: var(--azul);
+    background: var(--blanco);
+    color: var(--azul);
+    border: 3px solid var(--azul);
+    transition: 0.5s;
   }
 legend {
     font-size: 20px;
@@ -86,6 +89,7 @@ label{
     display: flex;
     width: 500px;
     gap: 10px;
+    height: 650px;
     flex-direction: column;
     border-radius: 20px;
 
@@ -158,6 +162,7 @@ header::before {
     padding: 6px;
     border-radius: 5px;
     text-decoration: none;
+
     color: white;
     font-weight: 600;
     font-family: 'Roboto Condensed';
@@ -170,12 +175,29 @@ header::before {
 
 .edit {
     background-color: rgb(32, 175, 32);
+    font-family: 'Roboto Condensed';
+    color: white;
+    cursor: pointer;
+}
+.edit:hover {
+    color: rgb(32, 175, 32);
+    border: 1px solid rgb(32, 175, 32);
+    background: var(--blanco);
+    transition: 0.5s;
 }
 
 .ver {
     background-color: rgb(92, 89, 245);
+    font-family: 'Roboto Condensed';
+    color: white;
+    cursor: pointer;
 }
-
+.ver:hover {
+    transition: 0.5s;
+    color: rgb(92, 89, 245);
+    border: 1px solid rgb(92, 89, 245);
+    background: var(--blanco);
+}
 nav{
     font-family: 'Roboto Condensed';
     display: flex;

@@ -81,6 +81,8 @@ h1 {
 .child-container a {
     display: inline-block;
     text-decoration: none;
+    cursor: pointer;
+
     color: #fff;
     background: var(--azul);
     padding: 10px 20px;
@@ -88,8 +90,13 @@ h1 {
     font-size: 1rem;
     margin-bottom: 40px;
     text-align: center;
+    transition: 0.25s;
 }
-
+.child-container a:hover {
+    background: var(--blanco);
+    border: 3px solid var(--azul);
+    color: var(--azul);
+}
 .father-container{
     display: flex;
     justify-content: center;

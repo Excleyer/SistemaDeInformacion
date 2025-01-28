@@ -267,6 +267,7 @@ color: var(--blanco);
   background: var(--blanco);
   color: var(--azul);
   border: 3px solid var(--azul);
+  cursor: pointer;
 }
 .ver:hover{
   color: var(--blanco);
