@@ -100,7 +100,7 @@
         if(res.interruptor){
          alert('Registro completado con exito');
          setTimeout(()=>{
-         window.location.href=`/home`;
+         window.location.href="/verPerfil/"+idPacientes;
          },2000);
         }else if(res.discrepancia){
          alert('La cedula del representante es incorrecta');

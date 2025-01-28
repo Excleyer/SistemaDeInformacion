@@ -71,9 +71,7 @@
     formulario.addEventListener('submit',event=>{
     event.preventDefault();
 
-     const data = new FormData(formulario);
-
-
+    const data = new FormData(formulario);
     const nombres = data.get('nombre');
     const apellidos = data.get('apellido');
     const edad = data.get('edad');

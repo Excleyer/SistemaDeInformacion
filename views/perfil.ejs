@@ -8,93 +8,81 @@
 </head>
 <body>
     
-    <% if(tabla == 'pacientes'){ %>
+    <% if (tabla === 'pacientes') { %>
         
     <h1>Perfil del Paciente</h1> 
     
     <div class="perfil-container">
-   
-        
-
         <div class="avatar-container">
             <img class="profile-avatar" src="/img/nino.jpg" alt="Avatar">
-        
-            
-    </div>
-        
+        </div>
 
         <h2>Datos Personales</h2>
-        
-        <p><strong>Nombres: <%=datos.nombres%></strong></p>
-        <p><strong>Apellidos: <%=datos.apellidos%></strong></p>
-        <p><strong>Edad : <%=datos.edad%></strong></p>
-        <p><strong>Sexo: <%=datos.sexo%></strong></p>
-        <p><strong>Fecha de Nacimiento: <%=datos.fechaNacimiento%></strong></p>
-        <p><strong>Lugar de Nacimiento:<%=datos.lugarNacimiento%></strong></p>
-        <p><strong>Dirección: <%=datos.direccion%></strong></p>
-        
+        <p><strong>Nombres: </strong><%= datos.nombres %></p>
+        <p><strong>Apellidos: </strong><%= datos.apellidos %></p>
+        <p><strong>Edad: </strong><%= datos.edad %></p>
+        <p><strong>Sexo: </strong><%= datos.sexo %></p>
+        <p><strong>Fecha de Nacimiento: </strong><%= datos.fechaNacimiento %></p>
+        <p><strong>Lugar de Nacimiento: </strong><%= datos.lugarNacimiento %></p>
+        <p><strong>Dirección: </strong><%= datos.direccion %></p>
     </div>
 
     <div class="perfil-container" id="espacio">
         <h2>Datos del Representante</h2>
-        <p><strong>Nombre y Apellido: <%=datos.representante.nombres%> <%=datos.representante.apellidos%></strong></p>
-        <p><strong>Edad: <%=datos.representante.edad%></strong></p>
-        <p><strong>Cédula: <%=datos.representante.cedula%></strong></p>
-        <p><strong>Sexo: <%=datos.representante.sexo%></strong></p>
-        <p><strong>Dirección: <%=datos.representante.direccion%></strong></p>
-        <p><strong>Telefono: <%=datos.representante.telefono%></strong></p>
-        <p><strong>Telefono2: <%=datos.representante.telefonoEmergencia%></strong></p>
-        
+        <p><strong>Nombre y Apellido: </strong><%= datos.representante.nombres %> <%= datos.representante.apellidos %></p>
+        <p><strong>Edad: </strong><%= datos.representante.edad %></p>
+        <p><strong>Cédula: </strong><%= datos.representante.cedula %></p>
+        <p><strong>Sexo: </strong><%= datos.representante.sexo %></p>
+        <p><strong>Dirección: </strong><%= datos.representante.direccion %></p>
+        <p><strong>Teléfono: </strong><%= datos.representante.telefono %></p>
+        <p><strong>Teléfono de Emergencia: </strong><%= datos.representante.telefonoEmergencia %></p>
     </div>
 
-    
     <div class="limiter">
-    <div class="perfil-container">
-        <h2>Consultas</h2>
-        <div class="wrap-table100">
-            <div class="table100">
-                <table>
-                    <thead>
+        <div class="perfil-container">
+            <h2>Consultas</h2>
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead>
+                            <tr class="table100-head">
+                                <th class="column">Evaluación</th>
+                                <th class="column">Peso</th>
+                                <th class="column">Fecha y Lugar</th>
+                                <th class="column" colspan="2">Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% datos.consultas.forEach(registro => { %>
+                                <tr>
+                                    <td><%= registro.evaluacion %></td>
+                                    <td><%= registro.peso %>kl</td>
+                                    <!-- Formatear la fecha aquí si es necesario -->
+                                    <td><%= new Date(registro.updatedAt).toLocaleString('es-VE', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true }) %></td>
 
-                        <tr class="table100-head">
-                            <th class="column">Evaluacion</th>
-                            <th class="column">Peso</th>
-                            <th class="column">Fecha y Lugar</th>
-                            <th class="column" colspan="2">Opciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% datos.consultas.forEach(registro=>{ %>
-                            <tr>
-                                
-                                <td><%=registro.evaluacion%>Kg</td>
-                                <td><%=registro.peso%></td>
-                                <td><%=registro.createdAt%></td>
-                               
-                                <td>
-                                  <a href="/editconsulta/<%=registro.id%>" class="options edit">Editar</a>
-                    
-                                </td>
-                                
-                              </tr>
-
-                              <% })  %>
-                    </tbody>
-                </table>
+                                    <td>
+                                        <a href="/editconsulta/<%= registro.id %>" class="options edit">Editar</a>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
+
+    <div class="father-container">
+        <div class="child-container">
+            <a href="/home">Volver a principal</a>
+            <a href="/addconsulta/<%= datos.id %>">Registrar consulta</a>
+        </div>
     </div>
 
-  
+    <% } else { %>
+        <!-- Mensaje si no hay pacientes -->
+        <h2>No se encontró información del paciente.</h2>
+    <% } %>
 
-
-   <div class="father-container">
-     <div class="child-container">
-        <a href="/home">Volver a principal</a>
-        <a href="/addconsulta/<%=datos.id%>">registrar consuslta</a>
-     </div>
-    </div>
-  <% } %>
 </body>
 </html>

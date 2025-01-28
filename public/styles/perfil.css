@@ -9,9 +9,16 @@ body {
 }
 
 :root {
-    --azul: #84d5fa;
-    --gris: #e9e6e6;
-}
+    --blanco: #FFFFFF;
+    --negro: #061c15;
+    --azul: #218a96;
+    --rosado: #f390b8;
+    --rosaClaro: #dfab9e;
+    --cafe: #e8e8c5;
+    --marron: #6e3118;
+    --gris: #f8f3f3;
+    --grisOscuro: #8d8d8d;
+  }
 
 h1 {
     text-align: center;
