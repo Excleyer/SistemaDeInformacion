@@ -50,6 +50,8 @@
             <label for="direccion" class="dir">Dirección:</label>
             <input type="text" id="direccion" name="direccion" value='<%=data.direccion%>'>
 
+            <label for="Descripcion" class="dir">Descripcion:</label>
+            <input type="text" id="direccion" name="descripcion" value='<%=data.descripcion%>'>
         </div>
         <div class="container-btn">
             <button class="btn">Registrar</button>
@@ -74,6 +76,8 @@
         const fecha_nac = data.get('fecha_nac');
         const lugar_nac = data.get('lugar_nac');
         const direccion = data.get('direccion');
+        const descripcion = data.get('descripcion');
+
 
         const id = formulario.dataset.id;
         fetch(`/update/${id}`,{
@@ -81,7 +85,7 @@
             headers:{
                 "Content-Type":"application/json"
             },
-            body:JSON.stringify({nombres,apellidos,edad,sexo,fecha_nac,lugar_nac,direccion,id})
+            body:JSON.stringify({nombres,apellidos,edad,sexo,fecha_nac,lugar_nac,direccion,descripcion,id})
         })
         .then(res=>res.json())
         .then(res=>{

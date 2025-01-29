@@ -79,6 +79,7 @@ const register = async(req,res)=>{
 ///////////////////////////////////////////////////
 const registerPost = async(req,res)=>{
 	try{
+		let descripcion = " ";
 		let idRepresentante;
      const {nombres,apellidos,edad,sexo,fecha_nac,lugar_nac,direccion,representante} = req.body;
 
@@ -90,7 +91,7 @@ const registerPost = async(req,res)=>{
         }
       console.log(`id representante idR xxxxxxx=${idRepresentante}`);
 
-      await pacientes.create({nombres,apellidos,edad,sexo,fechaNacimiento:fecha_nac,lugarNacimiento:lugar_nac,direccion,idRepresentante});
+      await pacientes.create({nombres,apellidos,edad,sexo,fechaNacimiento:fecha_nac,lugarNacimiento:lugar_nac,direccion,idRepresentante,descripcion});
 
        res.json({interruptor:true});
 
@@ -168,9 +169,9 @@ res.render('./representante/verRepre.ejs',{representante:r});
 ///////////////////////////////////////////////////
 const update = async(req,res)=>{
 try{
-const {nombres,apellidos,edad,sexo,fecha_nac,lugar_nac,direccion,id} = req.body;
+const {nombres,apellidos,edad,sexo,fecha_nac,lugar_nac,direccion,descripcion,id} = req.body;
 
-await pacientes.update({nombres,apellidos,edad,sexo,fecha_nac,lugar_nac,direccion},{where:{id}});
+await pacientes.update({nombres,apellidos,edad,sexo,fecha_nac,lugar_nac,direccion,descripcion},{where:{id}});
 res.json({interruptor:true});
 }catch(error){
 console.error(error.message);

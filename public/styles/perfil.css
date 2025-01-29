@@ -76,7 +76,38 @@ h1 {
 .limiter{
     padding-bottom: 30px;
 }
+.options {
+    padding: 6px;
+    border-radius: 5px;
+    text-decoration: none;
 
+    color: white;
+    font-weight: 600;
+    font-family: 'Roboto Condensed';
+}
+
+.options:hover {
+    background-color: white ;
+    color: rgb(0, 0, 0);
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.edit {
+    background-color: rgb(32, 175, 32);
+    font-family: 'Roboto Condensed';
+    color: white;
+    cursor: pointer;
+}
+.edit:hover{
+    background-color: #fff;
+    color: rgb(32, 175, 32);
+    border: 2px solid rgb(32, 175, 32);
+    transition: 0.25s;
+}
 /* Botón de regreso */
 .child-container a {
     display: inline-block;

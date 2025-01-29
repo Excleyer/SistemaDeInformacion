@@ -35,6 +35,10 @@ const Pacientes = sequelize.define('pacientes', {
     type: DataTypes.STRING(100),
     allowNull: false
   },
+  descripcion: {
+    type: DataTypes.STRING(100),
+    allowNull: false
+  },
   idRepresentante: {
     type: DataTypes.INTEGER.UNSIGNED,
     allowNull: false,

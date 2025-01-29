@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil del Paciente</title>
     <link rel="stylesheet" href="/styles/perfil.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     
@@ -25,6 +29,16 @@
         <p><strong>Fecha de Nacimiento: </strong><%= datos.fechaNacimiento %></p>
         <p><strong>Lugar de Nacimiento: </strong><%= datos.lugarNacimiento %></p>
         <p><strong>Dirección: </strong><%= datos.direccion %></p>
+    </div>
+    <div class="perfil-container " id="espacio">
+        
+
+        <h2>Mi Desarrollo</h2>
+        <p><strong>Descripcion:</strong><%= datos.descripcion %></p>
+        <div class="center">
+        <a href="/editarNino/<%= datos.id %>" class="options edit">Editar</a>
+    </div>
+       
     </div>
 
     <div class="perfil-container" id="espacio">
