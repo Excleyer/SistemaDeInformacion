@@ -3,6 +3,7 @@
     --negro: #061c15;
     --azul: #218a96;
     --rosado: #f390b8;
+    --azulClarito:#218a9640;
     --rosaClaro: #dfab9e;
     --cafe: #e8e8c5;
     --marron: #6e3118;
@@ -12,7 +13,7 @@
 body{
 
 
-    background: var(--gris);
+    background: var(--azulClarito);
     display:flex;
     justify-content: center;
     align-items: center;
@@ -109,8 +110,9 @@ label{
     justify-content: center;
     width: 100%;
     font-family: 'Roboto Condensed';
-    color: var(--azul);
+    color: var(--blanco);
     text-align: center;
+    background: var(--azul);
     border-radius: 0px 0px 20px 20px;
     /* ... tus estilos actuales ... */
     position: relative; /* Agrega esto para que el pseudo-elemento se posicione correctamente */
@@ -127,12 +129,12 @@ header::before {
 
 }
 .regresar{	
-    color: var(--azul);
+    color: var(--blanco);
     text-decoration: none;
     font-family: 'Roboto Condensed';
     font-size: 16px;
     border-radius: 5px;
-    border: 2px solid var(--azul);
+    border: 2px solid var(--blanco);
     padding: 5px 10px;
     margin-left: 10px;
     margin-right: 10px; 
@@ -148,7 +150,7 @@ header::before {
 }
 
 .main-header nav ul li a {
-    color: var(--azul);
+    color: var(--blanco);
     text-decoration: none;
 }
 .container-btn{
