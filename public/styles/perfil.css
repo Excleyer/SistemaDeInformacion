@@ -102,6 +102,47 @@ h1 {
     color: white;
     cursor: pointer;
 }
+
+.table100-head th{
+    font-family: 'Roboto Condensed';
+    font-size: 18px;
+    color: var(--azul);
+    gap: 100px;
+    line-height: 1.2;
+    font-weight: unset;
+    text-transform: uppercase;
+}
+td	{
+    font-family: 'Roboto Condensed';
+    font-size: 15px;
+    text-align: center;
+    align-items: center;
+    color: #555555;
+    gap: 100px;
+    line-height: 1.2;
+    font-weight: unset;
+    background-color: var(--gris);
+    height: 40px;;
+}
+.styl{
+    font-family: 'Roboto Condensed';
+    font-size: 15px;
+    color: #555555;
+    gap: 100px;
+    line-height: 1.2;
+    font-weight: unset;
+    width: 800px;;
+}
+.table100{
+    font-family: 'Roboto Condensed';
+    font-size: 15px;
+    color: #555555;
+    gap: 100px;
+    line-height: 1.2;
+    font-weight: unset;
+}
+
+
 .edit:hover{
     background-color: #fff;
     color: rgb(32, 175, 32);
