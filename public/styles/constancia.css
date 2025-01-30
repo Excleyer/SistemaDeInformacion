@@ -140,8 +140,8 @@ header::before {
     margin-right: 10px; 
 }
 .regresar:hover{
-    background-color: var(--azul);
-    color: var(--blanco);
+    background-color: var(--blanco);
+    color: var(--azul);
     transition: 0.5s;
 }
 .main-header nav ul li {

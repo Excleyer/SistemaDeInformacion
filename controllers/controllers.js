@@ -35,14 +35,7 @@ const index = async(req,res)=>{
 		res.status(500).send('Error en el servidor');
 	}
 }
-const help = async(req,res)=>{
-	try{
-		res.render('help.ejs');
-	}catch(error){
-		console.error(error.message);
-		res.status(500).send('Error en el servidor');
-	}
-}
+
 ///////////////////////////////////////////////////
 const login = async(req,res)=>{
 	try{
@@ -371,7 +364,6 @@ module.exports={
 	loginPost,
 	logout,
 	filtro,
-	help,
 	addconsulta,
 	addconsultasPOST,
 	editconsultaget,
